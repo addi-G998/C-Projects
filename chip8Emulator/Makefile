@@ -1,3 +1,7 @@
+ifeq ($(shell which sdl2-config 2>/dev/null),)
+$(error SDL2 not found. Run 'make install-deps' first)
+endif
+
 # Compiler & flags
 CC      := gcc
 CFLAGS  := -Wall -Wextra -std=c11 \
